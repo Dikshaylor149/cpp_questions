@@ -1,0 +1,21 @@
+class Solution {
+  public:
+    int getSecondLargest(vector<int>& arr){
+        int l=INT_MIN;
+        int sl=INT_MIN;
+        if (arr.size()<2)
+        return -99;
+        l=arr[0];
+        for(int i=1;i<arr.size();i++){
+            if(arr[i]>l){
+            sl=l;
+            l=arr[i];
+            }
+            else if(arr[i]>sl && arr[i]<l){
+                sl=arr[i];
+            }
+        }
+        return(sl==INT_MIN)?-1:sl;
+        
+    }
+};
